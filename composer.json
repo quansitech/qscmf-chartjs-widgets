@@ -1,0 +1,29 @@
+{
+    "name": "quansitech/qscmf-chartjs-widgets",
+    "description": "qscmf chartjs widget",
+    "type": "library",
+    "keywords": ["qscmf", "component", "widget", "chartjs"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tiderjian",
+            "email": "tider_yatsen@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "tiderjian/think-core": "^11.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "ChartJs\\": "src/"
+        }
+    },
+    "extra": {
+        "qscmf": {
+            "providers": [
+                "ChartJs\\ChartJsWidgetsProvider"
+            ]
+        }
+    }
+}
