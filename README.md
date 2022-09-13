@@ -29,6 +29,9 @@ $area->setHeight(200);
 //设置x坐标标签
 $area->setLabels(['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']);
 
+//设置图形标题
+$area->setTitle("销售量统计")
+
 //添加数据源，可以添加多个维度的数据
 //第一个参数该维度数据标题
 //第二个参数，数据组
@@ -109,6 +112,27 @@ $line->setLabels($lables);
 $line->addDataSet('捐赠金额', [12, 19, 3, 5, 2, 3], '#ff851b');
 ```
 
+### Pie
+预设的Pie类型
+```php
+$line = Factory::getInstance('pie');
+$lables = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
+$line->setLabels($lables);
+
+//area类型扩展了第三个参数，可通过第三个参数来设置维度数据的线条颜色
+$line->addDataSet('捐赠金额', [12, 19, 3, 5, 2, 3], [
+    '#4dc9f6',
+    '#f67019',
+    '#f53794',
+    '#537bc4',
+    '#acc236',
+    '#166a8f',
+    '#00a950',
+    '#58595b',
+    '#8549ba'
+]);
+```
+
 ### 辅助方法
 
 genLastDayLabels 快速生成过去N天的labels
@@ -156,3 +180,4 @@ $content->addRow(new Card($card_row, '统计', 'danger'));
 
 $content->display();
 ```
+
