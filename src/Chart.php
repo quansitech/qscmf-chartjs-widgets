@@ -12,6 +12,7 @@ class Chart{
     protected $custom_options;
     protected $labels;
     protected $data_sets;
+    protected $title;
 
     public function __construct($type)
     {
@@ -28,6 +29,11 @@ class Chart{
         return $this;
     }
 
+    public function setTitle(string $title) : self{
+        $this->title = $title;
+        return $this;
+    }
+
     public function setHeight($height){
         $this->height = $height;
         return $this;
@@ -38,10 +44,11 @@ class Chart{
         return $this;
     }
 
-    public function addDataSet($label, $data){
+    public function addDataSet($label, $data, $background_color = null, $border_color = null){
         $this->data_sets[] = [
             'label' => $label,
-            'data' => $data
+            'data' => $data,
+            'backgroundColor' => $background_color
         ];
 
         return $this;
@@ -53,6 +60,18 @@ class Chart{
             'data' => [
                 'labels' => $this->labels,
                 'datasets' => $this->data_sets
+            ],
+            'options' => [
+                'plugins' => [
+                    'legend' => [
+                        'position' => 'top',
+                        'title' => [
+                            'display' => true,
+                            'text' => $this->title,
+                            'padding' => 5
+                        ]
+                    ]
+                ]
             ]
         ];
     }

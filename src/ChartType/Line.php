@@ -6,7 +6,7 @@ use ChartJs\Chart;
 
 class Line extends Chart {
 
-    public function addDataSet($label, $data, $border_color){
+    public function addDataSet($label, $data, $background_color = null, $border_color = null){
         $this->data_sets[] = [
             'label' => $label,
             'data' => $data,
