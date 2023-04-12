@@ -1,5 +1,5 @@
 # qscmf-chartjs-widgets
-基于chartjs封装的qscmf后台模块化组件
+基于[chartjs](https://www.chartjs.org)封装的qscmf后台模块化组件
 
 ## 安装
 
